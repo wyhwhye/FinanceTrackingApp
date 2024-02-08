@@ -7,6 +7,7 @@
 import java.util.Scanner;
 
 public class Main {
+    Scanner in = new Scanner(System.in);
     /**
      * list the menu
      *
@@ -43,18 +44,16 @@ public class Main {
                     return;
                 }
                 default -> System.out.println("Please enter correct number!");
-
             }
-
         }
-
-
     }
 
 
     public static void main(String[] args) {
-        new Login();
+        LoginRegister loginRegister = new LoginRegister();
         Main FT = new Main();
+
+        loginRegister.LoginOrRegister();
         FT.Loop();
     }
 
