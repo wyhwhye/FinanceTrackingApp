@@ -8,15 +8,6 @@ import java.util.Scanner;
 
 class Main {
     /**
-     * user login in
-     *
-     */
-    public void Login(){
-
-    }
-
-
-    /**
      * list the menu
      *
      */
@@ -62,8 +53,8 @@ class Main {
 
 
     public static void main(String[] args) {
+        new Login();
         Main FT = new Main();
-        FT.Login();
         FT.Loop();
     }
 
