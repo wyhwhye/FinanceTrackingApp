@@ -6,7 +6,7 @@
 
 import java.util.Scanner;
 
-class Main {
+public class Main {
     /**
      * list the menu
      *

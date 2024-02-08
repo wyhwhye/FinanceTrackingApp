@@ -2,7 +2,7 @@
  * Description: *
  */
 
-class TimeLine {
+public class TimeLine {
     TimeLine(){
         System.out.println("***TimeLine***");
     }
