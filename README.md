@@ -1,1 +1,2 @@
-## Java final project for 2024 winter program in UT Austin
+# Finance Tracking App
+Java final project for 2024 winter program in UT Austin
