@@ -15,10 +15,23 @@ public class Bill {
 
     public void AddItems(){
         System.out.println("***AddItems***");
+
         System.out.println("Please enter your bill:");
-        System.out.println("(Name) (Price) (Date) (Type) (Notes)");
-        String input = in.nextLine();
-        fileUtil.writeFile(path, input);
+        System.out.println("(Name) (Price) (Date)");
+        System.out.println("goggle 14$ 2/12/2024");
+        String input1 = in.nextLine();
+
+        System.out.println("(Type)");
+        System.out.println("clothes");
+        String input2 = in.nextLine();
+
+        System.out.println("(Notes)");
+        System.out.println("black, the magic 5");
+        String input3 = in.nextLine();
+
+        fileUtil.writeFile(path, input1);
+        fileUtil.writeFile(path, input2);
+        fileUtil.writeFile(path, input3);
     }
 
     public void Categories(){
