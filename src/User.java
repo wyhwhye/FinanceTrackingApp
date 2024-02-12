@@ -1,17 +1,17 @@
 /**
- * Description: implement user login and register
+ * Description: implement user login and register; and check user account
  */
 
 
 import java.util.Scanner;
 
 
-public class LoginRegister {
+public class User {
     String path = "user.txt";
     FileUtil fileUtil = new FileUtil();
     Scanner in = new Scanner(System.in);
 
-    LoginRegister() {
+    User() {
         System.out.println("***User***");
         fileUtil.createFile(path);
     }
@@ -80,6 +80,10 @@ public class LoginRegister {
                 login();
             }
         }
+    }
+
+   public void Account(){
+        System.out.println("***Account***");
     }
 
 }
