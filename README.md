@@ -9,7 +9,6 @@ It is a preliminary project only using terminal to operate.
 │  .gitignore
 │  FinanceTrackingApp.iml
 │  README.md
-│  tree.txt
 │  
 │      
 ├─data
