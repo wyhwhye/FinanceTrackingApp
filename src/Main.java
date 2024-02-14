@@ -4,6 +4,7 @@
  * Description: This program helps individuals to manage their daily expense.
  */
 
+import java.text.ParseException;
 import java.util.Scanner;
 
 public class Main {
@@ -27,7 +28,7 @@ public class Main {
      * According to the input, it will call relevant function.
      *
      */
-    public static void Loop(User user, Bill bill){
+    public static void Loop(User user, Bill bill) throws ParseException {
         Scanner in = new Scanner(System.in);
         int cmd = 0;
         for(;;){
@@ -48,7 +49,7 @@ public class Main {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         User user = new User();
         Bill bill = new Bill();
 
