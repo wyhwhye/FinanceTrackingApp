@@ -65,9 +65,9 @@ public class FileUtil {
      * @param content   the content need to write to file
      * @return          write success or not
      */
-    public boolean writeFile(String filePath, String content) {
+    public boolean writeFile(String filePath, String content, boolean unique) {
         // content already in file, return
-        if (containsString(filePath, content)) {
+        if (unique && containsString(filePath, content)) {
             System.out.println("ERROR! Already in file!");
             return false;
         }
@@ -108,16 +108,16 @@ public class FileUtil {
         return inFile;
     }
 
-    public static void main(String[] args) {
-        FileUtil fileUtil = new FileUtil();
-        String filePath = "example.txt";
-        fileUtil.createFile(filePath);
-        String inn = "wyh"+" "+"123";
-        fileUtil.writeFile(filePath, inn);
-        String[] res = fileUtil.readFile(filePath);
-        System.out.println(Arrays.toString(res));
+//    public static void main(String[] args) {
+//        FileUtil fileUtil = new FileUtil();
+//        String filePath = "example.txt";
+//        fileUtil.createFile(filePath);
+//        String inn = "wyh"+" "+"123";
+//        fileUtil.writeFile(filePath, inn, true);
+//        String[] res = fileUtil.readFile(filePath);
+//        System.out.println(Arrays.toString(res));
 //        System.out.println(fileUtil.containsString("example.txt","wyh 12345"));
-    }
+//    }
 
 
 }

@@ -5,7 +5,6 @@
 
 import java.util.Scanner;
 
-
 public class User {
     String path = "user.txt";
     FileUtil fileUtil = new FileUtil();
@@ -18,6 +17,7 @@ public class User {
 
     public void login(){
         while (true){
+            System.out.println("\nLOGIN");
             System.out.print("Name: ");
             String name =  in.next();
             in.nextLine();
@@ -40,14 +40,26 @@ public class User {
             System.out.print("Please enter your account name: ");
             String name =  in.next();
             in.nextLine();
-
+            if (!fileUtil.writeFile(path,name,true)) {
+                System.out.println("Name already exist");
+                break;
+            }
             System.out.print("Please enter your password: ");
             String psw1 =  in.next();
             in.nextLine();
 
-            System.out.print("Please enter your password again: ");
-            String psw2 =  in.next();
-            in.nextLine();
+            while (true) {
+                System.out.print("Please enter your password again: ");
+                String psw2 =  in.next();
+                in.nextLine();
+                if (!psw1.equals(psw2)){
+                    System.out.println("\nThe passwords are different!");
+                    System.out.println("   Please try again\n");
+                }
+                else{
+                    break;
+                }
+            }
 
             System.out.print("Please enter your phone number: ");
             String phoneNumber =  in.next();
@@ -58,11 +70,7 @@ public class User {
             in.nextLine();
 
 
-            if (!psw1.equals(psw2)){
-                System.out.println("The passwords are different!");
-            }
-
-            else if(fileUtil.writeFile(path,name) && fileUtil.writeFile(path,name+" "+psw1) && fileUtil.writeFile(path,name+" "+phoneNumber+" "+address)){
+            if(fileUtil.writeFile(path,name+" "+psw1,true) && fileUtil.writeFile(path,name+" "+phoneNumber+" "+address,true)){
                 System.out.println("Register success!");
                 break;
             }
@@ -82,8 +90,25 @@ public class User {
         }
     }
 
-   public void Account(){
+    public void Account() {
         System.out.println("***Account***");
+        Double total = 0.0;
+        Bill bill = new Bill();
+        String[] array = fileUtil.readFile("bill.txt");
+        for (int i = 0; i < array.length; i += 3) {
+            String price = bill.separate(array[i], 1);
+            if (!price.equals("No item")) { // 检查是否成功获取到了价格
+                String priceStr = price.substring(0, price.length() - 1);
+                Double priceDouble = Double.parseDouble(priceStr);
+                total += priceDouble;
+            }
+        }
+        System.out.println(total);
     }
 
+
+    public static void main(String[] args) {
+        User user = new User();
+        user.Account();
+    }
 }

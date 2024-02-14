@@ -1,3 +1,9 @@
-micros 3.99$ 2/9/2024
+micros 3.99$ 2024-4-5
 foods
 yummy,good
+google 34$ 2023-2-45
+foods
+blaaa,ed
+wae 23$ 2025-9-4
+phone
+wae
