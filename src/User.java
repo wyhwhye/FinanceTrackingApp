@@ -62,7 +62,7 @@ public class User {
                 System.out.println("The passwords are different!");
             }
 
-            else if(fileUtil.writeFile(path,name) && fileUtil.writeFile(path,name+" "+psw1) && fileUtil.writeFile(path,name+" "+phoneNumber+" "+address)){
+            else if(fileUtil.writeFile(path,name,true) && fileUtil.writeFile(path,name+" "+psw1,true) && fileUtil.writeFile(path,name+" "+phoneNumber+" "+address,true)){
                 System.out.println("Register success!");
                 break;
             }

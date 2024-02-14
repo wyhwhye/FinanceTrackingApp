@@ -29,9 +29,9 @@ public class Bill {
         System.out.println("black, the magic 5");
         String input3 = in.nextLine();
 
-        fileUtil.writeFile(path, input1);
-        fileUtil.writeFile(path, input2);
-        fileUtil.writeFile(path, input3);
+        fileUtil.writeFile(path, input1, false);
+        fileUtil.writeFile(path, input2, false);
+        fileUtil.writeFile(path, input3, false);
     }
 
     public void Categories(){
