@@ -19,16 +19,17 @@ public class Main {
         System.out.println("2. Categories");
         System.out.println("3. Time line");
         System.out.println("4. Account");
-        System.out.print("What would you like to do? Please enter number 1-4. (-1 to exit): ");
+        System.out.print("What would you like to do? Please enter number 1-4. (-1 to exit): \n");
     }
 
 
     /**
      * Continually waiting and analyze user's input.
      * According to the input, it will call relevant function.
+     * @throws ParseException
      *
      */
-    public static void Loop(User user, Bill bill) throws ParseException {
+    public static void Loop(User user, Bill bill) throws ParseException{
         Scanner in = new Scanner(System.in);
         int cmd = 0;
         for(;;){
@@ -50,6 +51,16 @@ public class Main {
 
 
     public static void main(String[] args) throws ParseException {
+        String smileyFace =
+                "\n  *****  \n" +
+                        " *     * \n" +
+                        "*  O O  *\n" +
+                        "*   ∇   *\n" +
+                        " *     * \n" +
+                        "  *****  \n" +
+                        "\n MADE BY\n" +
+                        " ZHUA WA \n";
+        System.out.println(smileyFace);
         User user = new User();
         Bill bill = new Bill();
 

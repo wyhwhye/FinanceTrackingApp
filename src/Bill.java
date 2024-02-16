@@ -19,6 +19,7 @@ public class Bill {
         fileUtil.createFile(path);
     }
 
+    //Add more item and stored
     public void AddItems(){
         System.out.println("***AddItems***");
 
@@ -36,11 +37,12 @@ public class Bill {
         System.out.println("black, the magic 5");
         String input3 = in.nextLine();
 
-        fileUtil.writeFile(path, input1,false);
-        fileUtil.writeFile(path, input2,false);
-        fileUtil.writeFile(path, input3,false);
+        fileUtil.writeFile(path, input1, false);
+        fileUtil.writeFile(path, input2, false);
+        fileUtil.writeFile(path, input3, false);
     }
 
+    //calculate the categories in all file
     public void Categories(){
         System.out.println("***Categories***");
         String[] array = fileUtil.readFile(path);
@@ -61,6 +63,7 @@ public class Bill {
 
     }
 
+    //ordered the time line
     public void TimeLine() throws ParseException{
         System.out.println("***TimeLine***");
         // enter item name
@@ -76,7 +79,7 @@ public class Bill {
         // sorted date
         Collections.sort(items, new Comparator<Item>() {
             public int compare(Item item1, Item item2) {
-                return item2.getDate().compareTo(item1.getDate());
+                return item1.getDate().compareTo(item2.getDate());
             }
         });
 
@@ -105,6 +108,14 @@ public class Bill {
         }
     }
 
+    /**
+     * Separate the string
+     *
+     * @param line  which line in the file
+     * @param index which sring in the line
+     * @return sparate word
+     * @return if no string return "no item"
+     */
     public static String separate (String line, int index) {
         int nowIndex = 0;
         Scanner lineScanner = new Scanner(line);
@@ -119,6 +130,7 @@ public class Bill {
         return "No item";
     }
 
+    //Test
     public static void main(String[] args) throws ParseException{
         Bill bill = new Bill();
         bill.TimeLine();

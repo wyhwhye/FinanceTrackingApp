@@ -90,10 +90,17 @@ public class User {
         }
     }
 
+    //Calculate the total prices
     public void Account() {
         System.out.println("***Account***");
-        Double total = 0.0;
         Bill bill = new Bill();
+        String[] array1 = fileUtil.readFile(path);
+        System.out.println("Name: " + array1[1]);
+        String contact = bill.separate(array1[3], 1);
+        System.out.println("Contact Number: " + contact);
+        String address = bill.separate(array1[3], 2);
+        System.out.println("Address: " + address);
+        Double total = 0.0;
         String[] array = fileUtil.readFile("bill.txt");
         for (int i = 0; i < array.length; i += 3) {
             String price = bill.separate(array[i], 1);
@@ -103,12 +110,12 @@ public class User {
                 total += priceDouble;
             }
         }
-        System.out.println(total);
+        System.out.println("Amount: " + total);
     }
 
 
-    public static void main(String[] args) {
-        User user = new User();
-        user.Account();
-    }
+    // public static void main(String[] args) {
+    //     User user = new User();
+    //     user.Account();
+    // }
 }

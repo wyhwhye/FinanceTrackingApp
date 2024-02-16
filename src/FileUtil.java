@@ -6,6 +6,7 @@
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class FileUtil {
     private String folder = "data/";
@@ -28,9 +29,9 @@ public class FileUtil {
         try {
             File file = new File(folder+filePath);
             if (file.createNewFile()) {
-                System.out.println("create file success: " + file.getName());
+                // System.out.println("create file success: " + file.getName());
             } else {
-                System.out.println("file exists.");
+                // System.out.println("file exists.");
             }
         } catch (IOException e) {
             System.out.println("create file fail.");
@@ -74,7 +75,7 @@ public class FileUtil {
 
         try (FileWriter writer = new FileWriter(folder+filePath,true)) {
             writer.write(content+"\n");
-            System.out.println("write file success.");
+            // System.out.println("write file success.");
             return true;
         } catch (IOException e) {
             System.out.println("write file fail.");
@@ -108,16 +109,17 @@ public class FileUtil {
         return inFile;
     }
 
-//    public static void main(String[] args) {
-//        FileUtil fileUtil = new FileUtil();
-//        String filePath = "example.txt";
-//        fileUtil.createFile(filePath);
-//        String inn = "wyh"+" "+"123";
-//        fileUtil.writeFile(filePath, inn, true);
-//        String[] res = fileUtil.readFile(filePath);
-//        System.out.println(Arrays.toString(res));
-//        System.out.println(fileUtil.containsString("example.txt","wyh 12345"));
-//    }
+
+    // public static void main(String[] args) {
+    //     FileUtil fileUtil = new FileUtil();
+    //     String filePath = "bill.txt";
+    //     fileUtil.createFile(filePath);
+    //     // String inn = "wyh"+" "+"123";
+    //     // fileUtil.writeFile(filePath, inn);
+    //     String[] res = fileUtil.readFile(filePath);
+    //     System.out.println(Arrays.toString(res));
+    //   System.out.println(fileUtil.containsString("example.txt","wyh 12345"));
+    // }
 
 
 }
